@@ -11,37 +11,26 @@
 			{
 				if (item > 0)
 				{
-					if (isConnectedToSum)
-					{
-						sumOfAnswer += item;
-						maxSumConnectedToCurrentItem += item;
-					}
+					if (isConnectedToSum) { sumOfAnswer += item; }
 					else
 					{
 						if (maxSumConnectedToCurrentItem + item >= sumOfAnswer)
 						{
 							sumOfAnswer = item + maxSumConnectedToCurrentItem;
-							maxSumConnectedToCurrentItem += item;
-							isConnectedToSum = true;	
-						}
-						else
-						{
-							maxSumConnectedToCurrentItem += item;
+							isConnectedToSum = true;
 						}
 					}
 				}
 				else
 				{
+					isConnectedToSum = false;
 					if (maxSumConnectedToCurrentItem + item < 0)
 					{
 						maxSumConnectedToCurrentItem = 0;
+						continue;
 					}
-					else
-					{
-						maxSumConnectedToCurrentItem += item;
-					}
-					isConnectedToSum = false;
 				}
+				maxSumConnectedToCurrentItem += item;
 			}
 			return sumOfAnswer;
 		}
