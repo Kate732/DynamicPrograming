@@ -40,5 +40,12 @@ namespace TestCalculateMaxSumOfSequence
 			double expected = 7;
 			Assert.AreEqual(expected, MaxSumOfSequence.CalculateMaxSumOfSequence(origin));
 		}
+		[TestMethod]
+		public void TestNegativeAndPositiveNumbersAnswerIsInTheMiddle2()
+		{
+			List<double> origin = new List<double> { 5, -1, -3, 6, -25, 2, 30, -1, 4 };
+			double expected = 35;
+			Assert.AreEqual(expected, MaxSumOfSequence.CalculateMaxSumOfSequence(origin));
+		}
 	}
 }

@@ -21,6 +21,7 @@
 						if (maxSumConnectedToCurrentItem + item >= sumOfAnswer)
 						{
 							sumOfAnswer = item + maxSumConnectedToCurrentItem;
+							maxSumConnectedToCurrentItem += item;
 							isConnectedToSum = true;	
 						}
 						else
